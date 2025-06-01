@@ -8,10 +8,7 @@ const WebSocket = require("ws");
 (async () => {
   try {
     console.log("Подключаемся к MongoDB...");
-    const client = await MongoClient.connect(process.env.DB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const client = await MongoClient.connect(process.env.DB_URI);
     console.log("Подключение к MongoDB успешно");
 
     const app = express();
